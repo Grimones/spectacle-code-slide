@@ -1,15 +1,13 @@
 const memoize = require('lodash.memoize');
-
-function highlightCode(code, lang) {
-  if (window.Prism) {
-    return window.Prism.highlight(code, window.Prism.languages[lang])
-  } else {
-    return code;
-  }
-}
+import 'prismjs/themes/prism-tomorrow.css';
+import Prism from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-jsx';
 
 function getHighlightedCodeLines(code, lang) {
-  return highlightCode(code, lang).split('\n');
+  return Prism.highlight(code, Prism.languages[lang]).split('\n');
 }
 
 module.exports = memoize(getHighlightedCodeLines);
