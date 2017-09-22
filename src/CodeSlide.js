@@ -56,7 +56,8 @@ class CodeSlide extends React.Component {
       title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
       note: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
     })),
-    showLineNumbers: PropTypes.bool
+    showLineNumbers: PropTypes.bool,
+    getStep: PropTypes.func
   };
 
   static defaultProps = {
@@ -160,6 +161,9 @@ class CodeSlide extends React.Component {
     if (active !== null) {
       e.preventDefault();
       active = clamp(active, 0, this.props.ranges.length - 1);
+      if (this.props.getStep) {
+        this.props.getStep(active, this.props.ranges.length);
+      }
       this.goTo(active);
     }
   };
