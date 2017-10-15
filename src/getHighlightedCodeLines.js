@@ -5,6 +5,7 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-glsl';
 
 function getHighlightedCodeLines(code, lang) {
   return Prism.highlight(code, Prism.languages[lang]).split('\n');
