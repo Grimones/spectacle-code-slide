@@ -3,7 +3,7 @@ const React = require('react');
 const styles = {
   position: 'fixed',
   left: '50%',
-  top: '20px',
+  top: '-20px',
   transform: 'translate(-50%)',
   padding: '20px 40px',
   border: '10px solid hotpink',

@@ -1,1 +1,4 @@
-module.exports = require('./CodeSlide');
+module.exports = {
+  CodeSlide: require('./CodeSlide'),
+  SplitViewCodeSlide: require('./SplitViewCodeSlide')
+};
